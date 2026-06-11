@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CONFIGURACIÓN DE VISTA PREVIA (OPEN GRAPH) -->
+<!--------------------------------- CONFIGURACIÓN DE VISTA PREVIA (OPEN GRAPH) --------------------------------->
     <title>🔥🧯BOMBOT🧯🔥</title>
     <meta property="og:title" content="BOMBOT - Proyecto Mecatrónico">
     <meta property="og:description" content="Acceso a la documentación técnica, especificaciones y control del sistema automatizado BOMBOT.">
@@ -14,7 +14,7 @@
 
     <style>
 
-        /* ESTILOS DE FONDO Y CUERPO */
+/********************************* ESTILOS DE FONDO Y CUERPO *********************************/
         body, html { 
             margin: 0; 
             padding: 0; 
@@ -29,7 +29,7 @@
             text-align: center; 
         }
 
-        /* PANTALLA DE INICIO */
+/********************************* PANTALLA DE INICIO *********************************/
         #pantalla-inicio { 
             position: fixed; 
             width: 100%; 
@@ -55,7 +55,7 @@
             backdrop-filter: blur(5px);
         }
 
-        /* BOTONES */
+/********************************* BOTONES *********************************/
         .boton { 
             display: inline-block; 
             padding: 15px 30px; 
@@ -73,7 +73,7 @@
 
         .boton:active { transform: scale(0.95); }
 
-        /* CONTENEDOR DE CONTENIDO */
+/********************************* CONTENEDOR DE CONTENIDO *********************************/
         #contenido { 
             display: none; 
             padding: 20px; 
@@ -105,7 +105,7 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.5); 
         }
 
-/* CUENTA REGRESIVA (Colocación) */
+/********************************* CUENTA REGRESIVA (Colocación) *********************************/
     #cuenta-regresiva { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
     	.tiempo-bloque { background: #d4af37; color: white; padding: 10px; border-radius: 10px; min-width: 65px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     	.numero { display: block; font-size: 24px; font-weight: bold; }
@@ -152,7 +152,7 @@
 		<br>
 
 
-<!--------------------------------- Cuenta Regresiva (Colocación) --------------------------------->	
+<!--------------------------------- Cuenta Regresiva (Colocación Visual) --------------------------------->	
 	<h2 style="color: #d4af37;">Próximo Evento</h2>
     <h2 style="color: #d4af37;">Sera el --- Faltan:</h2>
     <div id="cuenta-regresiva">
@@ -202,7 +202,10 @@
 </audio>
 
 <script>
+	
+/********************************* CUENTA REGRESIVA (Colocación) *********************************/	
     const fechaEvento = new Date("June 20, 2026 17:00:00").getTime();
+/********************************* CUENTA REGRESIVA (Colocación) *********************************/	
 
     const contador = setInterval(function() {
         const ahora = new Date().getTime();
