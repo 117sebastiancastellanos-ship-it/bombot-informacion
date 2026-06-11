@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- CONFIGURACIÓN DE VISTA PREVIA (OPEN GRAPH) -->
-    <title>🤖 BOMBOT - Panel de Control 🤖</title>
+    <title>🔥🧯BOMBOT🧯🔥</title>
     <meta property="og:title" content="BOMBOT - Proyecto Mecatrónico">
     <meta property="og:description" content="Acceso a la documentación técnica, especificaciones y control del sistema automatizado BOMBOT.">
     <meta property="og:image" content="https://117sebastiancastellanos-ship-it.github.io/bombot-informacion/icono1.jpeg">
@@ -13,116 +13,219 @@
     <meta property="og:type" content="website">
 
     <style>
-        /* ESTILOS GLOBALES */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        /* ESTILOS DE FONDO Y CUERPO */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Georgia', serif; 
+            background-image: url('fondo1.jpg'); 
+            background-repeat: repeat-y; 
+            background-position: center top; 
+            background-size: contain; 
+            background-attachment: scroll;
+            background-color: #002366; 
+            color: #fdfaf6; 
+            text-align: center; 
         }
 
-        /* CONTENEDOR PRINCIPAL */
-        .tarjeta-panel {
-            background-color: #1e293b;
-            max-width: 500px;
-            width: 90%;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            border: 1px solid #38bdf8;
+        /* PANTALLA DE INICIO */
+        #pantalla-inicio { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            background-image: url('fondo0.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1000; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            transition: opacity 0.8s ease; 
         }
 
-        h1 {
-            color: #38bdf8;
-            font-size: 2.2rem;
-            margin-top: 0;
-            letter-spacing: 1px;
+        .contenedor-bienvenida {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 25px;
+            margin: 20px;
+            border-radius: 20px;
+            max-width: 85%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
         }
 
-        p {
-            color: #94a3b8;
-            line-height: 1.6;
-            font-size: 1.05rem;
+        /* BOTONES */
+        .boton { 
+            display: inline-block; 
+            padding: 15px 30px; 
+            margin: 10px; 
+            font-size: 18px; 
+            background: #d4af37; 
+            color: white; 
+            text-decoration: none; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); 
+            transition: transform 0.2s; 
         }
 
-        .separador {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #38bdf8, transparent);
-            margin: 25px 0;
+        .boton:active { transform: scale(0.95); }
+
+        /* CONTENEDOR DE CONTENIDO */
+        #contenido { 
+            display: none; 
+            padding: 20px; 
+            max-width: 600px; 
+            margin: 20px auto; 
+            background-color: rgba(0, 35, 102, 0.85); 
+            border-radius: 20px;
+            animation: aparecer 2s ease; 
         }
 
-        /* SECCIONES TÉCNICAS */
-        .bloque-tecnico {
-            background-color: #0f172a;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            text-align: left;
-            border-left: 4px solid #38bdf8;
+        .foto-invitacion { 
+            width: 100%; 
+            max-width: 450px; 
+            border-radius: 15px; 
+            margin: 20px 0; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
         }
 
-        .bloque-tecnico h3 {
-            margin: 0 0 5px 0;
-            color: #f1f5f9;
-            font-size: 1.1rem;
+        @keyframes aparecer { 
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); } 
         }
 
-        .bloque-tecnico p {
-            margin: 0;
-            font-size: 0.95rem;
+        h1 { color: #d4af37; font-size: 2.5em; margin-top: 20px; }
+
+        .seccion { 
+            margin: 40px 0; 
+            padding: 20px; 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5); 
         }
 
-        /* BOTÓN DE ACCIÓN */
-        .btn-accion {
-            display: inline-block;
-            background-color: #38bdf8;
-            color: #0f172a;
-            padding: 12px 25px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 15px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
-        }
-
-        .btn-accion:hover {
-            background-color: #0ea5e9;
-            transform: translateY(-2px);
-        }
+        /* CUENTA REGRESIVA */
+        #cuenta-regresiva { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+        .tiempo-bloque { background: #d4af37; color: white; padding: 10px; border-radius: 10px; min-width: 65px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .numero { display: block; font-size: 24px; font-weight: bold; }
+        .etiqueta { font-size: 12px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-    <div class="tarjeta-panel">
-        <h1>SISTEMA BOMBOT</h1>
-        <p>Plataforma centralizada para el registro de especificaciones, mantenimiento y desarrollo del proyecto de automatización.</p>
-        
-        <div class="separador"></div>
-
-        <div class="bloque-tecnico">
-            <h3>📋 Especificaciones de Hardware</h3>
-            <p>Módulos de control, actuadores, sensores y distribución eléctrica del prototipo.</p>
+    <div id="pantalla-inicio">
+        <div class="contenedor-bienvenida">
+            <p style="color: #002366; font-weight: bold; font-size: 1.1em;">Bienvenido a los 15 años de</p>
+            <p style="color: #002366; font-weight: bold; font-size: 1.1em;">Perla Esmeralda</p>
+            <p style="color: #002366;">Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que amas los hace inolvidables.</p>
         </div>
-
-        <div class="bloque-tecnico">
-            <h3>🛠️ Manuales y Mantenimiento</h3>
-            <p>Guías operativas, rutinas de calibración y diagramas de conexión.</p>
-        </div>
-
-        <div class="bloque-tecnico">
-            <h3>💻 Bitácora de Software</h3>
-            <p>Historial de versiones del firmware, scripts de prueba y algoritmos de control.</p>
-        </div>
-
-        <a href="#" class="btn-accion">Descargar Documentación</a>
+        <button class="boton" id="btnComenzar">✨ Abrir Invitación ✨</button>
     </div>
 
+    <div id="contenido">
+        <h1>Mis 15 Años</h1>
+        <br>
+        <img src="imagen1.jpeg" alt="Mis XV" class="foto-invitacion">
+        <h1>Perla Esmeralda</h1>
+        <br>
+        <p>Agradezco a Dios por cada bendición en mi vida, a mis padres por hacer mi sueño realidad y por estar a mi lado en cada momento. Hoy hace 15 años mis padres daban gracias a Dios por mi y hoy yo doy gracias a Dios por ellos, gracias a mis familiares y amigos por hacer especial este día.</p>
+        <!-- Transición de fotos en formato GIF -->
+        <img src="arco.gif" alt="Momentos de Perla Esmeralda" class="foto-invitacion">
+		<p>Con la bendición de Dios y mis padres.</p>
+		<br>
+		<p style="font-style: italic; color: #d4af37;">Claudia Díaz</p>
+		<p style="font-style: italic; color: #d4af37;">Y</p>
+		<p style="font-style: italic; color: #d4af37;">Manuel Villegas</p>
+		<br>
+		<p>Te invito a compartir conmigo este día especial.</p>      
+		<br>
+
+		<h2 style="color: #d4af37;">Es el 20 de Junio del 2026</h2>
+        <h2 style="color: #d4af37;">Faltan:</h2>
+        <div id="cuenta-regresiva">
+            <div class="tiempo-bloque"><span class="numero" id="dias">00</span><span class="etiqueta">Días</span></div>
+            <div class="tiempo-bloque"><span class="numero" id="horas">00</span><span class="etiqueta">Hs</span></div>
+            <div class="tiempo-bloque"><span class="numero" id="minutos">00</span><span class="etiqueta">Min</span></div>
+            <div class="tiempo-bloque"><span class="numero" id="segundos">00</span><span class="etiqueta">Seg</span></div>
+        </div>
+        
+        <div class="seccion">
+            <img src="imagen3.jpeg" alt="Parroquia Jesús Obrero" class="foto-invitacion">
+            <h3>⛪ Ceremonia</h3>
+            <p style="font-style: italic; color: #d4af37;">Parroquia Jesús Obrero</p>
+            <p>Calle Martin López esquina con Pino Suarez col. División del norte<br><br>Hora: 05:00 PM a 6:00 PM</p>
+            <a href="https://maps.app.goo.gl/DT55SsK6YfoFn5gF8" target="_blank" class="boton">📍 Ver Ubicación</a>
+        </div>
+
+        <div class="seccion">
+            <img src="imagen4.jpg" alt="Salón y Terraza Ilusión" class="foto-invitacion">
+            <h3>🎉 Recepción</h3>
+            <p style="font-style: italic; color: #d4af37;">Salón y Terraza Ilusión</p>
+            <p>Privada Ejido El Vergel 1277 col. El Papalote<br><br>Hora: 08:30 PM a 01:30 AM</p>
+            <a href="https://maps.app.goo.gl/LEVxEWPDe55MqvnE8" target="_blank" class="boton">📍 Cómo llegar</a>
+        </div>
+
+        <div class="seccion">
+            <h2 style="color: #d4af37;">Código de Vestimenta</h2>
+			<p>Semi formal.</p>
+            <img src="imagen2.png" alt="Código de Vestimenta" class="foto-invitacion">
+			<p style="font-style: italic; color: #d4af37;">Sugerencia</p>
+	        <p>Para honrar a la quinceañera se reserva el color azul rey.</p>
+        </div>
+
+        <div class="seccion">
+            <h2 style="color: #d4af37;">Lluvia de Sobres</h2>
+            <img src="imagen5.png" alt="Lluvia de Sobres" class="foto-invitacion">
+            <p>Tu compañía es mi mejor alegría, si deseas acompañarla con un detalle lo recibiré con cariño y gratitud.</p>
+        </div>
+        
+        <div class="seccion">
+            <h3>📱 Confirmación</h3>
+            <p>Por favor, confirma tu asistencia.</p>
+            <a href="https://wa.link/tevhox" target="_blank" class="boton" style="background-color: #25d366;">✅ Confirmar por WhatsApp</a>
+        </div>
+
+        <p style="font-style: italic; color: #d4af37; padding-bottom: 20px;">Te espero para celebrar juntos.</p>
+    </div>
+
+    <audio id="reproductor" loop playsinline>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const fechaEvento = new Date("June 20, 2026 17:00:00").getTime();
+
+        const contador = setInterval(function() {
+            const ahora = new Date().getTime();
+            const diferencia = fechaEvento - ahora;
+
+            const d = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = d;
+            document.getElementById("horas").innerHTML = h;
+            document.getElementById("minutos").innerHTML = m;
+            document.getElementById("segundos").innerHTML = s;
+
+            if (diferencia < 0) {
+                clearInterval(contador);
+                document.getElementById("cuenta-regresiva").innerHTML = "¡Es hoy!";
+            }
+        }, 1000);
+
+        const btn = document.getElementById('btnComenzar');
+        const audio = document.getElementById('reproductor');
+
+        btn.addEventListener('click', function() {
+            audio.play().catch(err => console.log("Audio bloqueado"));
+            document.getElementById('pantalla-inicio').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('pantalla-inicio').style.display = 'none';
+                document.getElementById('contenido').style.display = 'block';
+            }, 500);
+        });
+    </script>
 </body>
 </html>
