@@ -5,148 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- CONFIGURACIÓN DE VISTA PREVIA (OPEN GRAPH) -->
-    <title>🔥 BOMBOT - Información 🔥</title>
-    <meta property="og:title" content="BOMBOT - Proyecto de Automatización">
-    <meta property="og:description" content="Conoce las especificaciones, manuales y avances de nuestro proyecto BOMBOT. 🛠️">
-    <!-- Se usa la ruta absoluta de GitHub para la vista previa -->
+    <title>🤖 BOMBOT - Panel de Control 🤖</title>
+    <meta property="og:title" content="BOMBOT - Proyecto Mecatrónico">
+    <meta property="og:description" content="Acceso a la documentación técnica, especificaciones y control del sistema automatizado BOMBOT.">
     <meta property="og:image" content="https://117sebastiancastellanos-ship-it.github.io/Bombot-Informacion/icono1.jpeg">
     <meta property="og:url" content="https://117sebastiancastellanos-ship-it.github.io/Bombot-Informacion/">
     <meta property="og:type" content="website">
 
     <style>
-        /* ESTILOS DE FONDO Y CUERPO */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-image: url('fondo1.jpg'); 
-            background-repeat: repeat-y; 
-            background-position: center top; 
-            background-size: contain; 
-            background-attachment: scroll;
-            background-color: #0b111e; 
-            color: #fdfaf6; 
-            text-align: center; 
+        /* ESTILOS GLOBALES */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* PANTALLA DE INICIO */
-        #pantalla-inicio { 
-            position: fixed; 
-            width: 100%; 
-            height: 100%; 
-            background-image: url('fondo0.png');
-            background-size: cover;
-            background-position: center;
-            z-index: 1000; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            transition: opacity 0.8s ease; 
+        /* CONTENEDOR PRINCIPAL */
+        .tarjeta-panel {
+            background-color: #1e293b;
+            max-width: 500px;
+            width: 90%;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid #38bdf8;
         }
 
-        .contenedor-bienvenida {
-            background-color: rgba(255, 255, 255, 0.1); 
-            padding: 25px;
-            margin: 20px;
-            border-radius: 20px;
-            max-width: 85%;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        h1 {
+            color: #38bdf8;
+            font-size: 2.2rem;
+            margin-top: 0;
+            letter-spacing: 1px;
         }
 
-        /* BOTONES */
-        .boton { 
-            display: inline-block; 
-            padding: 15px 30px; 
-            margin: 10px; 
-            font-size: 18px; 
-            background: #ff5722; 
-            color: white; 
-            text-decoration: none; 
-            border: none; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); 
-            transition: transform 0.2s; 
+        p {
+            color: #94a3b8;
+            line-height: 1.6;
+            font-size: 1.05rem;
         }
 
-        .boton:active { transform: scale(0.95); }
-
-        /* CONTENEDOR DE CONTENIDO */
-        #contenido { 
-            display: none; 
-            padding: 20px; 
-            max-width: 600px; 
-            margin: 20px auto; 
-            background-color: rgba(15, 23, 42, 0.9); 
-            border-radius: 20px;
-            animation: aparecer 2s ease; 
-            border: 1px solid rgba(255, 87, 34, 0.3);
+        .separador {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #38bdf8, transparent);
+            margin: 25px 0;
         }
 
-        .foto-proyecto { 
-            width: 100%; 
-            max-width: 450px; 
-            border-radius: 15px; 
-            margin: 20px 0; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+        /* SECCIONES TÉCNICAS */
+        .bloque-tecnico {
+            background-color: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: left;
+            border-left: 4px solid #38bdf8;
         }
 
-        @keyframes aparecer { 
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); } 
+        .bloque-tecnico h3 {
+            margin: 0 0 5px 0;
+            color: #f1f5f9;
+            font-size: 1.1rem;
         }
 
-        h1 { color: #ff5722; font-size: 2.5em; margin-top: 20px; }
-        h3 { color: #ff9100; }
+        .bloque-tecnico p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
 
-        .seccion { 
-            margin: 40px 0; 
-            padding: 20px; 
-            border-bottom: 1px solid rgba(255, 87, 34, 0.3); 
+        /* BOTÓN DE ACCIÓN */
+        .btn-accion {
+            display: inline-block;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 12px 25px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+        }
+
+        .btn-accion:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <div id="pantalla-inicio">
-        <div class="contenedor-bienvenida">
-            <p style="color: #ffffff; font-weight: bold; font-size: 1.5em; margin: 0 0 10px 0;">SISTEMA BOMBOT</p>
-            <p style="color: #e0e0e0; margin: 0;">Plataforma de documentación, control técnico y especificaciones del sistema automatizado.</p>
-        </div>
-        <button class="boton" id="btnComenzar">⚡ Acceder al Panel ⚡</button>
-    </div>
-
-    <div id="contenido">
-        <h1>BOMBOT</h1>
-        <br>
-        <img src="icono1.jpeg" alt="Logotipo Bombot" class="foto-proyecto">
+    <div class="tarjeta-panel">
+        <h1>SISTEMA BOMBOT</h1>
+        <p>Plataforma centralizada para el registro de especificaciones, mantenimiento y desarrollo del proyecto de automatización.</p>
         
-        <div class="seccion">
-            <h3>⚙️ Especificaciones del Sistema</h3>
-            <p>Espacio reservado para la descripción técnica del hardware, actuadores y controladores del robot.</p>
+        <div class="separador"></div>
+
+        <div class="bloque-tecnico">
+            <h3>📋 Especificaciones de Hardware</h3>
+            <p>Módulos de control, actuadores, sensores y distribución eléctrica del prototipo.</p>
         </div>
 
-        <div class="seccion">
-            <h3>📂 Documentación y Manuales</h3>
-            <p>Sección destinada a la descarga de manuales de usuario, diagramas eléctricos y guías de mantenimiento.</p>
+        <div class="bloque-tecnico">
+            <h3>🛠️ Manuales y Mantenimiento</h3>
+            <p>Guías operativas, rutinas de calibración y diagramas de conexión.</p>
         </div>
 
-        <p style="font-style: italic; color: #ff9100; padding-bottom: 20px;">Área Técnica - Información en Desarrollo.</p>
+        <div class="bloque-tecnico">
+            <h3>💻 Bitácora de Software</h3>
+            <p>Historial de versiones del firmware, scripts de prueba y algoritmos de control.</p>
+        </div>
+
+        <a href="#" class="btn-accion">Descargar Documentación</a>
     </div>
 
-    <script>
-        const btn = document.getElementById('btnComenzar');
-
-        btn.addEventListener('click', function() {
-            document.getElementById('pantalla-inicio').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('pantalla-inicio').style.display = 'none';
-                document.getElementById('contenido').style.display = 'block';
-            }, 500);
-        });
-    </script>
 </body>
 </html>
