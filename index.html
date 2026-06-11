@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-<!-- CONFIGURACIÓN DE VISTA PREVIA (OPEN GRAPH) -->
+    <!-- CONFIGURACIÓN DE VISTA PREVIA (OPEN GRAPH) -->
     <title>🔥 BOMBOT - Información 🔥</title>
     <meta property="og:title" content="BOMBOT - Proyecto de Automatización">
     <meta property="og:description" content="Conoce las especificaciones, manuales y avances de nuestro proyecto BOMBOT. 🛠️">
@@ -18,13 +18,13 @@
         body, html { 
             margin: 0; 
             padding: 0; 
-            font-family: 'Georgia', serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             background-image: url('fondo1.jpg'); 
             background-repeat: repeat-y; 
             background-position: center top; 
             background-size: contain; 
             background-attachment: scroll;
-            background-color: #002366; 
+            background-color: #0b111e; 
             color: #fdfaf6; 
             text-align: center; 
         }
@@ -46,13 +46,14 @@
         }
 
         .contenedor-bienvenida {
-            background-color: rgba(255, 255, 255, 0.8); 
+            background-color: rgba(255, 255, 255, 0.1); 
             padding: 25px;
             margin: 20px;
             border-radius: 20px;
             max-width: 85%;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* BOTONES */
@@ -61,13 +62,13 @@
             padding: 15px 30px; 
             margin: 10px; 
             font-size: 18px; 
-            background: #d4af37; 
+            background: #ff5722; 
             color: white; 
             text-decoration: none; 
             border: none; 
             border-radius: 50px; 
             cursor: pointer; 
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); 
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); 
             transition: transform 0.2s; 
         }
 
@@ -79,17 +80,18 @@
             padding: 20px; 
             max-width: 600px; 
             margin: 20px auto; 
-            background-color: rgba(0, 35, 102, 0.85); 
+            background-color: rgba(15, 23, 42, 0.9); 
             border-radius: 20px;
             animation: aparecer 2s ease; 
+            border: 1px solid rgba(255, 87, 34, 0.3);
         }
 
-        .foto-invitacion { 
+        .foto-proyecto { 
             width: 100%; 
             max-width: 450px; 
             border-radius: 15px; 
             margin: 20px 0; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
         }
 
         @keyframes aparecer { 
@@ -97,126 +99,48 @@
             to { opacity: 1; transform: translateY(0); } 
         }
 
-        h1 { color: #d4af37; font-size: 2.5em; margin-top: 20px; }
+        h1 { color: #ff5722; font-size: 2.5em; margin-top: 20px; }
+        h3 { color: #ff9100; }
 
         .seccion { 
             margin: 40px 0; 
             padding: 20px; 
-            border-bottom: 1px solid rgba(212, 175, 55, 0.5); 
+            border-bottom: 1px solid rgba(255, 87, 34, 0.3); 
         }
-
-        /* CUENTA REGRESIVA */
-        #cuenta-regresiva { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
-        .tiempo-bloque { background: #d4af37; color: white; padding: 10px; border-radius: 10px; min-width: 65px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .numero { display: block; font-size: 24px; font-weight: bold; }
-        .etiqueta { font-size: 12px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <div id="pantalla-inicio">
         <div class="contenedor-bienvenida">
-            <p style="color: #002366; font-weight: bold; font-size: 1.1em;">Bienvenido a los 15 años de</p>
-            <p style="color: #002366; font-weight: bold; font-size: 1.1em;">Perla Esmeralda</p>
-            <p style="color: #002366;">Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que amas los hace inolvidables.</p>
+            <p style="color: #ffffff; font-weight: bold; font-size: 1.5em; margin: 0 0 10px 0;">SISTEMA BOMBOT</p>
+            <p style="color: #e0e0e0; margin: 0;">Plataforma de documentación, control técnico y especificaciones del sistema automatizado.</p>
         </div>
-        <button class="boton" id="btnComenzar">✨ Abrir Invitación ✨</button>
+        <button class="boton" id="btnComenzar">⚡ Acceder al Panel ⚡</button>
     </div>
 
     <div id="contenido">
-        <h1>Mis 15 Años</h1>
+        <h1>BOMBOT</h1>
         <br>
-        <img src="imagen1.jpeg" alt="Mis XV" class="foto-invitacion">
-        <h1>Perla Esmeralda</h1>
-        <br>
-        <p>Agradezco a Dios por cada bendición en mi vida, a mis padres por hacer mi sueño realidad y por estar a mi lado en cada momento. Hoy hace 15 años mis padres daban gracias a Dios por mi y hoy yo doy gracias a Dios por ellos, gracias a mis familiares y amigos por hacer especial este día.</p>
-        <!-- Transición de fotos en formato GIF -->
-        <img src="arco.gif" alt="Momentos de Perla Esmeralda" class="foto-invitacion">
-		<p>Con la bendición de Dios y mis padres.</p>
-		<br>
-		<p style="font-style: italic; color: #d4af37;">Claudia Díaz</p>
-		<p style="font-style: italic; color: #d4af37;">Y</p>
-		<p style="font-style: italic; color: #d4af37;">Manuel Villegas</p>
-		<br>
-		<p>Te invito a compartir conmigo este día especial.</p>      
-		<br>
-
-		<h2 style="color: #d4af37;">Es el 20 de Junio del 2026</h2>
-        <h2 style="color: #d4af37;">Faltan:</h2>
-        <div id="cuenta-regresiva">
-            <div class="tiempo-bloque"><span class="numero" id="dias">00</span><span class="etiqueta">Días</span></div>
-            <div class="tiempo-bloque"><span class="numero" id="horas">00</span><span class="etiqueta">Hs</span></div>
-            <div class="tiempo-bloque"><span class="numero" id="minutos">00</span><span class="etiqueta">Min</span></div>
-            <div class="tiempo-bloque"><span class="numero" id="segundos">00</span><span class="etiqueta">Seg</span></div>
-        </div>
-
-		
+        <img src="icono1.jpeg" alt="Logotipo Bombot" class="foto-proyecto">
+        
         <div class="seccion">
-            <img src="imagen3.jpeg" alt="Parroquia Jesús Obrero" class="foto-invitacion">
-            <h3>⛪ Ceremonia</h3>
-            <p style="font-style: italic; color: #d4af37;">Parroquia Jesús Obrero</p>
-            <p>Calle Martin López esquina con Pino Suarez col. División del norte<br><br>Hora: 05:00 PM a 6:00 PM</p>
-            <a href="https://maps.app.goo.gl/DT55SsK6YfoFn5gF8" target="_blank" class="boton">📍 Ver Ubicación</a>
-        </div>
-
-		
-        <div class="seccion">
-            <h2 style="color: #d4af37;">Código de Vestimenta</h2>
-			<p>Semi formal.</p>
-            <img src="imagen2.png" alt="Código de Vestimenta" class="foto-invitacion">
-			<p style="font-style: italic; color: #d4af37;">Sugerencia</p>
-	        <p>Para honrar a la quinceañera se reserva el color azul rey.</p>
+            <h3>⚙️ Especificaciones del Sistema</h3>
+            <p>Espacio reservado para la descripción técnica del hardware, actuadores y controladores del robot.</p>
         </div>
 
         <div class="seccion">
-            <h2 style="color: #d4af37;">Lluvia de Sobres</h2>
-            <img src="imagen5.png" alt="Lluvia de Sobres" class="foto-invitacion">
-            <p>Tu compañía es mi mejor alegría, si deseas acompañarla con un detalle lo recibiré con cariño y gratitud.</p>
+            <h3>📂 Documentación y Manuales</h3>
+            <p>Sección destinada a la descarga de manuales de usuario, diagramas eléctricos y guías de mantenimiento.</p>
         </div>
 
-		
-        <div class="seccion">
-            <h3>📱 Confirmación</h3>
-            <p>Por favor, confirma tu asistencia.</p>
-            <a href="https://wa.link/tevhox" target="_blank" class="boton" style="background-color: #25d366;">✅ Confirmar por WhatsApp</a>
-        </div>
-
-		
-        <p style="font-style: italic; color: #d4af37; padding-bottom: 20px;">Te espero para celebrar juntos.</p>
+        <p style="font-style: italic; color: #ff9100; padding-bottom: 20px;">Área Técnica - Información en Desarrollo.</p>
     </div>
 
-    <audio id="reproductor" loop playsinline>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
-
     <script>
-        const fechaEvento = new Date("June 20, 2026 17:00:00").getTime();
-
-        const contador = setInterval(function() {
-            const ahora = new Date().getTime();
-            const diferencia = fechaEvento - ahora;
-
-            const d = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-            document.getElementById("dias").innerHTML = d;
-            document.getElementById("horas").innerHTML = h;
-            document.getElementById("minutos").innerHTML = m;
-            document.getElementById("segundos").innerHTML = s;
-
-            if (diferencia < 0) {
-                clearInterval(contador);
-                document.getElementById("cuenta-regresiva").innerHTML = "¡Es hoy!";
-            }
-        }, 1000);
-
         const btn = document.getElementById('btnComenzar');
-        const audio = document.getElementById('reproductor');
 
         btn.addEventListener('click', function() {
-            audio.play().catch(err => console.log("Audio bloqueado"));
             document.getElementById('pantalla-inicio').style.opacity = '0';
             setTimeout(() => {
                 document.getElementById('pantalla-inicio').style.display = 'none';
