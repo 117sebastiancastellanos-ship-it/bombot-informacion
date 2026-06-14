@@ -155,7 +155,7 @@
 <!--------------------------------- Video de Prueba del Robot --------------------------------->
 <div class="seccion">
     <h3>📺 Demostración del Prototipo</h3>
-    <video controls width="100%" style="max-width: 450px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin: 20px 0;">
+    <video id="videoRobot" controls width="100%" style="max-width: 450px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin: 20px 0;">
         <source src="Video1.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
     </video>
@@ -253,6 +253,31 @@
             document.getElementById('contenido').style.display = 'block';
         }, 500);
     });
+
+
+	
+/********************************* SCRIPT DE CONTROL MUTUO DE AUDIO / VIDEO *********************************/
+    // Cuando el video se reproduce, se pausa la música de fondo
+    video.addEventListener('play', function() {
+        audio.pause();
+    });
+
+    // Cuando el video se pausa, se reanuda la música de fondo
+    video.addEventListener('pause', function() {
+        audio.play().catch(err => console.log("Error al reanudar audio"));
+    });
+
+    // Cuando el video termina, se reanuda la música de fondo automáticamente
+    video.addEventListener('ended', function() {
+        audio.play().catch(err => console.log("Error al terminar el video"));
+    });
+
+	
+	
 </script>
 </body>
 </html>
+
+
+
+
